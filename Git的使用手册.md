@@ -56,7 +56,7 @@
 
 .git文件就叫做版本库，版本库中的stage就叫做暂存区，使用`git add`时就是将文件的修改加入到了暂存区，使用`git commit`时就是将暂存区中的文件修改提交到当前分支中，`git init`时默认创建一个master分支，也叫作主分支，HEAD指向当前分支，HEAD和分支后面介绍。
 
-####  分支
+#### 分支
 
 **分支在实际中的作用：**假设你准备开发一个新功能，但是需要两周才能完成，第一周你写了50%的代码，如果立刻提交，由于代码还没写完，不完整的代码库会导致别人不能干活了。如果等代码全部写完再一次提交，又存在丢失每天进度的巨大风险。现在有了分支，就不用怕了。你创建了一个属于你自己的分支，别人看不到，还继续在原来的分支上正常工作，而你在自己的分支上干活，想提交就提交，直到开发完毕后，再一次性合并到原来的分支上，这样，既安全，又不影响别人工作。
 
@@ -64,13 +64,15 @@
 
 **![img](https://raw.githubusercontent.com/waterflowers/images/master/study-doc/git/2.png)**
 
-**如果在div分支上有了新提交，如下图：**
+**如果在div分支上有了新提交，如下图，红线就表示div分支新提交的内容：**
 
 **![img](https://raw.githubusercontent.com/waterflowers/images/master/study-doc/git/3.png)**
 
 **将master分支和dev分支合并，如下图：**
 
 **![img](<https://raw.githubusercontent.com/waterflowers/images/master/study-doc/git/4.png>)**
+
+#### 分支合并冲突
 
 **关于分支合并时的冲突，假如新建了一个feature1分支，在feature1和master上同时都对readme.txt进行了修改，并依次进行了add和commit，如下图：**
 
@@ -80,7 +82,11 @@
 
 **![img](https://raw.githubusercontent.com/waterflowers/images/master/study-doc/git/6.png)**
 
-**这时master分支就将dev中修改的提交合并过来了，dev中readme.txt还是原来的没有变。在实际开发中，分支策略应该按照master分支为稳定分支，用来发布新版本，不在上面开发，新建一个dev分支当做开发分支，而且每个人都有自己的分支，往dev上合并就行了，发布时将dev和master合并，如下图：**
+**这时master分支就将dev中修改的提交合并过来了，dev中readme.txt还是原来的没有变。**
+
+#### 分支策略
+
+**在实际开发中，分支策略应该按照master分支为稳定分支，用来发布新版本，不在上面开发，新建一个dev分支当做开发分支，而且每个人都有自己的分支，往dev上合并就行了，发布时将dev和master合并，如下图：**
 
 **![img](https://raw.githubusercontent.com/waterflowers/images/master/study-doc/git/7.png)**
 
